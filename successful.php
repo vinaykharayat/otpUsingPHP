@@ -14,7 +14,7 @@ and open the template in the editor.
         <?php
         include_once './bean/register.php';
         if($_POST['otp']==$_POST['conOtp'] && $_POST['username'] == $_POST["mailUser"]){
-            print_r("Success! Welcome");
+            print_r("<h1>Success! Welcome ". $_POST['username']."</h1>");
         }else{
                         print_r("<h1>Failed! Invalid otp for ".$_POST['username']."</h1> ");
 

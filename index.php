@@ -10,13 +10,18 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <h1>User registration with OTP verification</h1>
         <form action="./register.php" method="post">
-            UserName:<input type="text" name="name"><br>
-            Email:<input type="email" name="email"><br>
-            Phone Number: <input type="number" name="phone"><br>
-            <!--Subject:<input type="text" name="subject"><br>-->
-            <!--Message:<textarea name="message"></textarea><br>-->
-            <input type="submit" value="Register" name="submitButton" />
+            <fieldset>
+                <legend>Register</legend>
+                UserName:<br>
+                <input type="text" name="name" required="required"><br>
+                Email:<br>
+                <input type="email" name="email" required="required"><br>
+                Phone Number: <br>
+                <input type="tel" name="phone" required="required"><br>
+                <input type="submit" value="Register" name="submitButton" />
+            </fieldset
         </form>
         <?php
         // put your code here

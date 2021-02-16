@@ -37,7 +37,7 @@ function sendSuccessEmail($newUser) {
 
     $mail->addAddress($_POST['email']);    //Mail will be sent to this email
     $mail->Subject = $_POST["subject"];
-    $mail->Body = "Registration successful. Welcome " . $_POST['name'] . "Your otp is " . OTP . ". Visit this link to confirm http://192.168.2.200/RegistrationForm/register.php";
+    $mail->Body = "Registration successful. Welcome " . $_POST['name'] . ". Your OTP is " . OTP . ".\nUsername: ". $_POST['name'] .".\n Visit this link to confirm http://192.168.2.200/RegistrationForm/register.php";
     if ($mail->send()) {
         confirmAccount();
         verifyPhoneNumer();
@@ -48,6 +48,8 @@ function sendSuccessEmail($newUser) {
 
 function confirmAccount() {
     print_r("<h1>Check your inbox for OTP. If you can't see please check spam folder also!</h1>");
+    print_r("<p>OTP has been sent to Email: ".$_POST['email']." and Phone: ".$_POST['phone']."</p>");
+    print_r("<p>Username is sent to your email with OTP</p>");
     print_r("<form action='successful.php' method='post'>");
     print_r("<input placeholder='Enter username' name='username'><br>");
 
@@ -94,9 +96,9 @@ function verifyPhoneNumer() {
 
     curl_close($curl);
 
-    if ($err) {
-        echo "cURL Error #:" . $err;
-    } else {
-        echo $response;
-    }
+//    if ($err) {
+//        echo "cURL Error #:" . $err;
+//    } else {
+//        echo $response;
+//    }
 }
