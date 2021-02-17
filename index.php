@@ -23,8 +23,5 @@ and open the template in the editor.
                 <input type="submit" value="Register" name="submitButton" />
             </fieldset
         </form>
-        <?php
-        // put your code here
-        ?>
     </body>
 </html>

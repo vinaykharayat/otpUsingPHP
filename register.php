@@ -15,7 +15,6 @@ if (isset($_POST["name"]) && isset($_POST["email"])) {
 
     $newUser = new user($_POST["name"], $_POST["email"]);
     sendSuccessEmail($newUser);
-    // put your code here
 }
 
 function sendSuccessEmail($newUser) {
@@ -96,9 +95,4 @@ function verifyPhoneNumer() {
 
     curl_close($curl);
 
-//    if ($err) {
-//        echo "cURL Error #:" . $err;
-//    } else {
-//        echo $response;
-//    }
 }
